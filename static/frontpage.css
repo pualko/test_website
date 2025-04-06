@@ -1,0 +1,215 @@
+/* 移除頁面默認邊距 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: auto;
+    gap: 20px;
+    box-sizing: border-box; /* 使內邊距也計入寬度和高度 */
+}
+.topic{
+    font-weight:bold;
+    color: black;
+    text-decoration: none;  /* 移除底線 */
+}
+.main1{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.main1News{
+    width: 300px;
+    height: 400px;
+    background-color: rgb(228, 223, 223);
+}
+.btn1{
+    display: block;   /* 讓 <a> 變成區塊，這樣 text-align: center; 才會生效 */
+    text-align: center;
+    align-items: center;
+    margin: 50px auto;
+    text-decoration: none;
+    width: 90px;
+    height: 35px;
+    line-height: 35px;      /* 與height相同便可垂直置中*/
+    font-weight:bold;
+    border: 2px solid rgb(96, 96, 96);
+    border-radius: 20px;
+    color: black;
+}
+.Main2 {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-image: url(../首頁素材/首頁素材_C-半圓灰底.png);
+    background-size: 100%;
+    /*overflow: hidden;*/
+}
+.img{
+    position: absolute;
+}
+.img1{
+    top: 80px;
+    right: 100px;
+}
+.img2{
+    left: 200px;
+}
+.img3{
+    top: 500px;
+    right: 50px;
+}
+.img4{
+    top: 250px;
+    right: 150px;
+}
+.img5{
+    top: 230px;
+    left: -35px;
+}
+.img6{
+    top: 530px;
+    left: 130px;
+}
+.img7{
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.main2{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 200px;
+    height: 800px;
+}
+.learnTempo{
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.tempos{
+    display: flex;  /* 使 .tempos 內的元素水平排列 */
+    flex-direction: column;  /* 讓圖片與 tempoBox 垂直排列 */
+    align-items: center;  /* 讓圖片和 tempoBox 水平置中 */
+    width: 360px;
+}
+.tempoBox{
+    width: 350px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-weight:bold;
+    text-align: center;   /* 讓文字水平置中 */
+    word-wrap: break-word; /* 強制單詞在超出範圍時換行 */
+}
+.tempoBox p:nth-of-type(2) {
+    text-align: justify; /* 每個 div 中的第2個 p 元素左右對齊 */
+    padding: 0px 20px;
+}
+/* 該怎麼開始 */
+.main3{
+    position: relative;
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    width: 100%;
+    height: 400px;
+    gap: 20px;
+}
+.steps{
+    width: 700px;
+    height: 350px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-weight:bold;
+    text-align: center;   /* 讓文字水平置中 */
+    word-wrap: break-word; /* 強制單詞在超出範圍時換行 */
+}
+.stepBtn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    height: 80px;
+    width: 80px;
+    clip-path: circle(50%);
+}
+.stepBtn1 img{
+    width: 40px;
+}
+.knowSystem{
+    position: absolute;
+    right: 180px;
+    bottom: -15px;
+}
+.stepBtn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    height: 80px;
+    width: 80px;
+    clip-path: circle(50%);
+    transform: rotate(180deg);
+}
+.stepBtn2 img{
+    width: 40px;
+}
+.stepContent, .content {
+    display: none; /* 預設隱藏 */
+    padding-bottom: 20px;
+}
+.stepContent.active, .content.active {
+    display: block; /* 只有當前顯示 */
+}
+
+
+
+/* 常見問題 */
+.main4 {
+    background-color: #f8f5eb;
+    height: auto;
+}
+.btn2Format {
+    margin: 0px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 430px;
+    text-align: center;
+    background: white;
+    border-radius: 50px;
+}
+.btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0.6px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.btn2.active {
+    background-color: #a38f6e;
+    color: white;
+}
+.QA{
+    background: white;
+    padding: 5px 20px;
+    margin: 20px auto;
+    width: 850px;
+    border-radius: 20px;
+}
+.main5{
+    background-color: burlywood;
+    height: 200px;
+    text-align: center;
+}
