@@ -32,7 +32,6 @@ body, html {
     display: block;   /* 讓 <a> 變成區塊，這樣 text-align: center; 才會生效 */
     text-align: center;
     align-items: center;
-    margin: 50px auto;
     text-decoration: none;
     width: 90px;
     height: 35px;
@@ -42,14 +41,13 @@ body, html {
     border-radius: 20px;
     color: black;
 }
-.Main2 {
+.main2-1 {
     position: relative;
     text-align: center;
     width: 100%;
     height: auto;
-    background-image: url(../首頁素材/首頁素材_C-半圓灰底.png);
+    background-image: url(../static/image/frontpage_image/首頁素材_C-半圓灰底.png);
     background-size: 100%;
-    /*overflow: hidden;*/
 }
 .img{
     position: absolute;
@@ -82,7 +80,7 @@ body, html {
     left: 50%;
     transform: translate(-50%);
 }
-.main2{
+.main2-2{
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -122,47 +120,70 @@ body, html {
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中 */
     width: 100%;
-    height: 400px;
+    height: 430px;
     gap: 20px;
 }
 .steps{
+    position: relative;
     width: 700px;
     height: 350px;
     border: 2px solid black;
     border-radius: 20px;
     font-weight:bold;
-    text-align: center;   /* 讓文字水平置中 */
     word-wrap: break-word; /* 強制單詞在超出範圍時換行 */
+}
+.steptitle{
+    position: absolute;
+    font-size: 32px;
+    top: 30px;
+    left: 40px;
+}
+.stepwords{
+    position: absolute;
+    width: 312px;
+    font-size: 24px;
+    top: 100px;
+    left: 40px;
+}
+.stepimg{
+    position: absolute;
+    top: 30px;
+    right: 70px;
 }
 .stepBtn1{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(197, 197, 196);
     height: 80px;
     width: 80px;
     clip-path: circle(50%);
 }
-.stepBtn1 img{
+.stepBtn1 img,
+.stepBtn2 img {
     width: 40px;
+    filter: brightness(0) invert(1); /* 使圖片變成白色 */
+    transition: filter 0.3s ease-in-out;
+    cursor: pointer;
+}
+.stepBtn1:hover,         /* 懸停時改變顏色 */
+.stepBtn2:hover {
+    background-color: rgb(220, 125, 0);
 }
 .knowSystem{
     position: absolute;
-    right: 180px;
-    bottom: -15px;
+    right: 200px;
+    bottom: 0px;
 }
 .stepBtn2{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: rgb(197, 197, 196);
     height: 80px;
     width: 80px;
     clip-path: circle(50%);
     transform: rotate(180deg);
-}
-.stepBtn2 img{
-    width: 40px;
 }
 .stepContent, .content {
     display: none; /* 預設隱藏 */
@@ -176,14 +197,18 @@ body, html {
 
 /* 常見問題 */
 .main4 {
-    background-color: #f8f5eb;
+    background-image: url(../static/image/frontpage_image/首頁素材_E-半圓橘底.png);
+    background-repeat: no-repeat;       
+    background-size: 1500px auto; 
+    background-position: center center;
+    padding-bottom: 40px;
     height: auto;
 }
 .btn2Format {
     margin: 0px auto;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 430px;
+    width: 500px;
     text-align: center;
     background: white;
     border-radius: 50px;
@@ -196,20 +221,91 @@ body, html {
     border: none;
     cursor: pointer;
     border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
 }
 .btn2.active {
-    background-color: #a38f6e;
+    background-color: #ff6200;
     color: white;
 }
 .QA{
     background: white;
     padding: 5px 20px;
-    margin: 20px auto;
+    margin: 10px auto;
+    min-height: 50px;
     width: 850px;
     border-radius: 20px;
 }
-.main5{
-    background-color: burlywood;
-    height: 200px;
-    text-align: center;
+.verticalCenter{
+    display: flex;
+    align-items: center;   /* 垂直置中 */
+    height: 50px;
 }
+.inQA {
+    display: flex;
+    align-items: center;   /* 垂直置中 */
+    margin-left: auto;
+    width: 850px;
+    font-size: 18px;
+}
+.QAbtn{
+    margin-left: auto; /* 將按鈕推到最右側 */
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+.QAbtn:hover img{
+    content: url("../static/image/frontpage_image/首頁素材_E-icon-展開-Hover.png");
+}
+.QAbtn.open:hover img{
+    content: url("../static/image/frontpage_image/首頁素材_E-icon-合起-Hover.png");
+}
+.answer {
+    background-color: white;
+    font-size: 16px;
+    display: none; /* 默認隱藏 */
+}
+.answer.expanded {
+    display: block; /* 顯示更多文字 */
+}
+.checkall{
+    margin: 0px auto;
+    background-color: white;
+    border: none;
+}
+.main5{
+    display: flex;
+    justify-content: center;  /* 水平置中 */
+    background-color: rgb(252, 249, 249);
+    height: 300px;
+    padding-top: 30px;
+    gap: 60px;
+}
+.contact{
+    width: 250px;
+}
+.inforItem{
+    display: flex;
+    align-items: center;   /* 垂直置中 */
+}
+.inforGap{
+    margin-top: 50px;
+}
+.inforColumn{
+    flex-direction: column;
+    gap: 10px;
+}
+.inforItem p{
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.inforItem a{
+    text-decoration: none; /* 移除底線 */
+    color: black;
+    font-size: 16px;
+}
+.v-line{
+    border-left: solid #a6a6a6;
+    height:250px;
+   }
